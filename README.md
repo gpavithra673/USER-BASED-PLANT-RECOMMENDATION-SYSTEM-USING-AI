@@ -19,7 +19,7 @@ The objective of this project is to offer users personalized plant recommendatio
 
 ## PROGRAM:
 ### IMPORTING AND SPLITING DATASET INTO TRAINING SET AND TESTING SET
-```
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,13 +27,13 @@ from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import CountVectorizer
 ```
 ### loading the dataset to a pandas Dataframe
-```
+```python
 data=pd.read_csv("Plant_DS.csv")
 data=pd.DataFrame(data)
 data.head()
 ```
 ### preprocessing of data
-```
+```python
 word_to_append='water consumption'
 data['water consumption'] = [word +' '+ word_to_append for word in data['water consumption']]
 column_name=['Type','less care','more care','Max- Size','bears flower/not']
@@ -43,13 +43,13 @@ df=pd.DataFrame(df)
 df.head()
 ```
 ### applying CountVectorizer
-```
+```puthon
 vectorizer= CountVectorizer()
 x=vectorizer.fit_transform(df['data'])
 print(x)
 ```
 ### applying kmean clusttering's elbow method
-```
+```python
 kmean=KMeans(n_clusters=5, init='k-means++')
 kmean.fit(x)
 kmean.inertia_
@@ -60,7 +60,7 @@ for cluster in range(1,10):
     SSE.append(kmeans.inertia_)
 ```
 ### converting the results into a dataframe and plotting them
-```
+```python
 frame = pd.DataFrame({'Cluster':range(1,10), 'SSE':SSE})
 plt.figure(figsize=(12,6))
 plt.plot(frame['Cluster'], frame['SSE'], marker='o')
@@ -68,7 +68,7 @@ plt.xlabel('Number of clusters')
 plt.ylabel('Inertia')
 ```
 ### Applying kmean clustering
-```
+```python
 kmean=KMeans(n_clusters=9, init='k-means++')
 kmean.fit(x)
 from pandas.core.algorithms import value_counts
@@ -92,7 +92,7 @@ plt.scatter(df5["Plant_Names"],df5["Design"],c="purple",label="cluster-4")
 plt.legend()
 ```
 ### prediction 
-```
+```python
 sample_input =["bright spot,no need of direct sunlight,deep green,Garden,Common desk"]
 sample_input_bow = vectorizer.transform(sample_input)
 predicted_cluster = kmeans.predict(sample_input_bow)
