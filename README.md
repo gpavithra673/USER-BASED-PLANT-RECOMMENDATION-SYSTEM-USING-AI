@@ -110,11 +110,11 @@ for i in range(3):
   print(output[i])
 ```
 ## FLOW OF THE PROJECT:
-### 1)Load Dataset and Display Dataset
-### 2)Data Preprocessing 
-### 3)Elbow method
-### 4)KMean clustering
-### 5)Prediction using new data
+   * Load Dataset and Display Dataset
+   * Data Preprocessing 
+   * Elbow method
+   * KMean clustering
+   * Prediction using new data
 
 ![Business process flow example](https://github.com/gpavithra673/USER-BASED-PLANT-RECOMMENDATION-SYSTEM-USING-AI/assets/93427264/a746e1b4-d449-4f77-98a3-52c305834864)
 
