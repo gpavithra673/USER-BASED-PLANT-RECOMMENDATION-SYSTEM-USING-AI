@@ -10,14 +10,12 @@ The objective of this project is to offer users personalized plant recommendatio
 
 
 ## REQUIREMENTS:
-### A suitable python environment
-
-### Python packages:
-
-### pandas
-### train_test_split
-### CountVectorizer
-### KMeans
+    * A suitable python environment
+    * Python packages:
+        i)   pandas
+        ii)  train_test_split
+        iii) CountVectorizer
+        iv)  KMeans
 
 ## PROGRAM:
 ### IMPORTING AND SPLITING DATASET INTO TRAINING SET AND TESTING SET
